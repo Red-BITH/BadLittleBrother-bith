@@ -16,8 +16,8 @@ Toolumuz `GNU` lisansına sahibdir,istənilən platformada paylaşıla bilərsin
 2.`ZİP/7zip` -Vasitəsilə toolu endirə bilər və bir terminal proqramıında aça bilərsiniz.(Açmaq üçün `ZArchiver` tövsiyyə edilir)
 
                                                                         `GİT HUB`
-1.Terminalı(termux+) Açın.
-2.Əgər git yoxdursa $`apt/pkg install git`.Əgər varsa `3.`cü addımla davam edin.
-3.Klonlamaq üçün: $`git clone https://github.com/Red-BITH/BadLittleBrother-bith`
-4.Papkaya giriş üçün: $`cd BadLittleBrother-bith`
-5.$`BLB-bith.py`
+`1.`Terminalı(termux+) Açın.
+`2.`Əgər git yoxdursa $`apt/pkg install git`.Əgər varsa `3.`cü addımla davam edin.
+`3.`Klonlamaq üçün: $`git clone https://github.com/Red-BITH/BadLittleBrother-bith`
+`4.`Papkaya giriş üçün: $`cd BadLittleBrother-bith`
+`5.`Son olaraq $`BLB-bith.py`
