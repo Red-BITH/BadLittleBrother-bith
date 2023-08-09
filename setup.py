@@ -2,6 +2,7 @@ print("\033[91mBOOT: v0.0.1 EARLY ACCESS\033[0m")
 import time
 import os
 time.sleep(1)
+os.system("clear")
 print("""\033[92mCHOOSE LANGUAGE:
 \033[0m""")
 print("\033[94m 1. ENGLİSH/US\033[0m")
