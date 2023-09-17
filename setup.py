@@ -52,15 +52,17 @@ if(r == "1"):
     progress = ttk.Progressbar(frame, orient="horizontal", length=200, mode="determinate")
     progress.grid(row=1, column=1, padx=10, pady=10)
 
-    root.geometry("300x300")
-    root.lift()
+    root.geometry("700x500")
+    
     root.attributes('-topmost', True)
 
 # Animasyonu başlatmak için animate_loading işlevini çağırın
     animate_loading()
-    os.system("mpv fnaf3.mp3")
+    
 
     root.mainloop()
+    os.system("mpv fnaf3.mp3")
+    root.lift()
 
 
     os.system("pip install requests")
