@@ -30,6 +30,47 @@ if(r == "1"):
     import os
     os.system("sudo apt install mpv")
     os.system("mpv fnaf3.mp3")
+    class LoadingScreen(QWidget):
+        def __init__(self):
+            super().__init__()
+
+            self.setWindowTitle("Red_Tool")
+            self.setGeometry(100, 100, 300, 150)  # Pencere boyutunu ayarla
+
+            # Pencere boyutunu ve konumunu merkezin biraz üstüne ayarla
+            screen_geometry = QApplication.desktop().availableGeometry()
+            x = (screen_geometry.width() - self.width()) // 2
+            y = (screen_geometry.height() - self.height()) // 2 - 50
+            self.setGeometry(x, y, self.width(), self.height())
+        
+
+            layout = QVBoxLayout()
+
+            self.loading_label = QLabel("Bashladilir...")
+            self.loading_label.setAlignment(Qt.AlignCenter)
+            layout.addWidget(self.loading_label)
+
+            self.progress_bar = QProgressBar()
+            self.progress_bar.setRange(0, 0)  # Sürekli animasyon için aralığı ayarlar
+            layout.addWidget(self.progress_bar)
+
+            self.setLayout(layout)
+
+            # QTimer kullanarak pencereyi otomatik olarak kapat
+            self.timer = QTimer(self)
+            self.timer.timeout.connect(self.close_window)
+            self.timer.start(4000)  # 5 saniye bekleyip kapat
+
+        def close_window(self):
+            self.close()
+
+        if __name__ == "__main__":
+            app = QApplication(sys.argv)
+            window = LoadingScreen()
+            window.show()
+
+        from PIL import Image
+        import os
 
     os.system("pip install requests")
     import requests
