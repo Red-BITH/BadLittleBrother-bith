@@ -29,7 +29,6 @@ if(r == "1"):
     import time
     import os
     os.system("sudo apt install mpv")
-    os.system("mpv fnaf3.mp3")
     
     import tkinter as tk
     from tkinter import ttk
@@ -42,18 +41,18 @@ if(r == "1"):
             root.after(40, animate_loading)
 
     root = tk.Tk()
-    root.title("Yükleniyor...")
+    root.title("Red_TOOL")
 
     frame = ttk.Frame(root)
     frame.pack(pady=50)
 
-    loading_label = ttk.Label(frame, text="Başlatılıyor...", font=("Helvetica", 12))
+    loading_label = ttk.Label(frame, text="Bashladilir...", font=("Helvetica", 12))
     loading_label.grid(row=0, column=1, padx=10, pady=10)
 
     progress = ttk.Progressbar(frame, orient="horizontal", length=200, mode="determinate")
     progress.grid(row=1, column=1, padx=10, pady=10)
 
-    root.geometry("300x200")
+    root.geometry("300x300")
     root.lift()
     root.attributes('-topmost', True)
 
