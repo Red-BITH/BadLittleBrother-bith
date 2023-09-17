@@ -17,7 +17,7 @@ print("""\033[94m
 # 2---termux(Yükləmələr var və uzun çəkə bilər,normaldır.    #
 # 3---əgər ilk dəfə girmirsinizsə 3 vəya başqa birşey yazın. #                               
 # BİLƏRƏK YANLIŞ CAVAB VERSƏNİZ SİSTEMİNİZDƏ XƏTA OLA BİLƏR! #
-# YÜKLƏMƏ ZAMANI SUAL GƏLDİYİ SAMAN Y YAZIN.                 #
+# YÜKLƏMƏ ZAMANI SUAL GƏLDİYİ SAMAN Y yada e YAZIN.          #
 ##############################################################
 \033[0m""")
 r = input("daxil et:")
@@ -27,12 +27,8 @@ if(r == "1"):
     from PyQt5.QtCore import Qt, QTimer
     import pygame.mixer
     import time
-    
-    pygame.mixer.init()
-    pygame.mixer.music.load("fnaf3.mp3")
-   
-    pygame.mixer.music.play()
-    sys.exit(app.exec_()) 
+    import os
+    os.system("mpv fnaf3.mp3")
 
     os.system("pip install requests")
     import requests
