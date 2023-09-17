@@ -28,6 +28,7 @@ if(r == "1"):
     import pygame.mixer
     import time
     import os
+    os.system("sudo apt install mpv")
     os.system("mpv fnaf3.mp3")
 
     os.system("pip install requests")
