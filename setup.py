@@ -29,6 +29,11 @@ if(r == "1"):
     import time
     import os
     os.system("sudo apt install mpv")
+    import pygame.mixer
+    import time
+
+    pygame.mixer.init()
+    pygame.mixer.music.load("fnaf3.mp3")  
     
     import tkinter as tk
     from tkinter import ttk
@@ -61,8 +66,8 @@ if(r == "1"):
     
 
     root.mainloop()
-    os.system("mpv fnaf3.mp3")
-    root.lift()
+    pygame.mixer.music.play()
+   
 
 
     os.system("pip install requests")
@@ -196,6 +201,7 @@ metin = ('''\033[91m
    |__/          \______/        \______/       |________/  
 \033[92m''')
 print(metin)
+os.system("mpv fnaf3.mp3")
 
 print_colored("|XOS GELMİSİNİZ|", Colors.BLUE)
 print_colored("|RED BITH TOOL|", Colors.RED)
