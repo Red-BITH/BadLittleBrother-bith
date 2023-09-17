@@ -30,47 +30,39 @@ if(r == "1"):
     import os
     os.system("sudo apt install mpv")
     os.system("mpv fnaf3.mp3")
-    class LoadingScreen(QWidget):
-        def __init__(self):
-            super().__init__()
+    
+    import tkinter as tk
+    from tkinter import ttk
 
-            self.setWindowTitle("Red_Tool")
-            self.setGeometry(100, 100, 300, 150)  # Pencere boyutunu ayarla
+    def animate_loading():
+        progress["value"] += 1
+        if progress["value"] >= 100:
+            root.after(1000, root.destroy)  # 1 saniye sonra pencereyi kapat
+        else:
+            root.after(40, animate_loading)
 
-            # Pencere boyutunu ve konumunu merkezin biraz üstüne ayarla
-            screen_geometry = QApplication.desktop().availableGeometry()
-            x = (screen_geometry.width() - self.width()) // 2
-            y = (screen_geometry.height() - self.height()) // 2 - 50
-            self.setGeometry(x, y, self.width(), self.height())
-        
+    root = tk.Tk()
+    root.title("Yükleniyor...")
 
-            layout = QVBoxLayout()
+    frame = ttk.Frame(root)
+    frame.pack(pady=50)
 
-            self.loading_label = QLabel("Bashladilir...")
-            self.loading_label.setAlignment(Qt.AlignCenter)
-            layout.addWidget(self.loading_label)
+    loading_label = ttk.Label(frame, text="Başlatılıyor...", font=("Helvetica", 12))
+    loading_label.grid(row=0, column=1, padx=10, pady=10)
 
-            self.progress_bar = QProgressBar()
-            self.progress_bar.setRange(0, 0)  # Sürekli animasyon için aralığı ayarlar
-            layout.addWidget(self.progress_bar)
+    progress = ttk.Progressbar(frame, orient="horizontal", length=200, mode="determinate")
+    progress.grid(row=1, column=1, padx=10, pady=10)
 
-            self.setLayout(layout)
+    root.geometry("300x200")
+    root.lift()
+    root.attributes('-topmost', True)
 
-            # QTimer kullanarak pencereyi otomatik olarak kapat
-            self.timer = QTimer(self)
-            self.timer.timeout.connect(self.close_window)
-            self.timer.start(4000)  # 5 saniye bekleyip kapat
+# Animasyonu başlatmak için animate_loading işlevini çağırın
+    animate_loading()
+    os.system("mpv fnaf3.mp3")
 
-        def close_window(self):
-            self.close()
+    root.mainloop()
 
-        if __name__ == "__main__":
-            app = QApplication(sys.argv)
-            window = LoadingScreen()
-            window.show()
-
-        from PIL import Image
-        import os
 
     os.system("pip install requests")
     import requests
