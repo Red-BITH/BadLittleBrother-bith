@@ -65,8 +65,9 @@ if(r == "1"):
     animate_loading()
     
 
-    root.mainloop()
     pygame.mixer.music.play()
+    root.mainloop()
+    
    
 
 
