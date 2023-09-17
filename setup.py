@@ -29,7 +29,7 @@ if(r == "1"):
     import time
     
     pygame.mixer.init()
-    pygame.mixer.music.load("X2Download.app - FNaF 3 “Night Start” Sound (320 kbps).mp3")
+    pygame.mixer.music.load("X2Download.app - FNaF 3 “Night Start” Sound (320 kbps).wav")
     class LoadingScreen(QWidget):
         def __init__(self):
             super().__init__()
