@@ -33,7 +33,6 @@ if(r == "1"):
     class LoadingScreen(QWidget):
         def __init__(self):
             super().__init__()
-
             self.setWindowTitle("Red_Tool")
             self.setGeometry(100, 100, 300, 150)  # Pencere boyutunu ayarla
 
